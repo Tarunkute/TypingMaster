@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Speed Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="settings-container">
+    <button id="settingsBtn">⚙️</button>
+    <div id="settingsMenu" class="settings-menu">
+      <label><input type="checkbox" id="soundToggle" checked /> Sound</label>
+      <label><input type="checkbox" id="themeToggle" /> Light Mode</label>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Typing Speed Game</h1>
+
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <div id="quote" class="quote">Loading...</div>
+    <textarea id="input" placeholder="Start typing here..."></textarea>
+
+    <div class="stats">
+      <span>⏱ Time: <span id="timer">0</span>s</span>
+      <span>🚀 WPM: <span id="wpm">0</span></span>
+      <span>🎯 Accuracy: <span id="accuracy">0</span>%</span>
+    </div>
+
+    <button id="submitBtn">Submit</button>
+    <button onclick="restartGame()">Restart</button>
+
+    <div class="leaderboard">
+      <h3>🏆 Leaderboard</h3>
+      <ul id="leaderboardList"></ul>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal" id="resultModal">
+    <div class="modal-content">
+      <h2>Results</h2>
+      <p><strong>WPM:</strong> <span id="resultWPM"></span></p>
+      <p><strong>Accuracy:</strong> <span id="resultAccuracy"></span>%</p>
+      <p><strong>Mistakes:</strong> <span id="resultMistakes"></span></p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
